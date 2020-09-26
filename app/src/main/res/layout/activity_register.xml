@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffc7c7"
+    tools:context=".RegisterActivity">
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/logo_lutos"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0.07"
+        />
+    <TableLayout
+        android:id="@+id/table"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0.5"
+        android:stretchColumns="1"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp">
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="15dp">
+            <TextView
+                android:id="@+id/TvdisplayName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="DisplayName:"
+                android:layout_marginRight="10dp"/>
+
+            <EditText
+                android:id="@+id/EtdisplayName"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@drawable/dg_edit"
+                android:textSize="15sp"
+                android:hint="   DisplayName"
+                android:textColor="#000" />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="15dp">
+            <TextView
+                android:id="@+id/tvPhone_Number"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Phone number:"
+                android:layout_marginRight="10dp"/>
+
+            <EditText
+                android:id="@+id/EtPhoneNumberR"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@drawable/dg_edit"
+                android:textSize="15sp"
+                android:hint="   Phone number"
+
+                android:inputType="number"
+                android:textColor="#000" />
+        </TableRow>
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="15dp">
+
+            <TextView
+                android:id="@+id/tvemail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email:" />
+
+            <EditText
+                android:id="@+id/EtemailR"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:hint="   Email"
+                android:textSize="15sp"
+                android:background="@drawable/dg_edit"
+                android:inputType="textEmailAddress"
+                android:textColor="#000" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="15dp">>
+            <TextView
+                android:id="@+id/tvpass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Password:"
+                android:layout_marginRight="10dp"/>
+
+            <EditText
+                android:id="@+id/EtpassR"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@drawable/dg_edit"
+                android:textSize="15sp"
+                android:hint="   Password"
+
+                android:inputType="textPassword"
+                android:textColor="#000" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="15dp">
+            <TextView
+                android:id="@+id/tvRepassR"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Confirm password:"
+                android:layout_marginRight="10dp"/>
+
+            <EditText
+                android:id="@+id/EtRepassR"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@drawable/dg_edit"
+                android:textSize="15sp"
+                android:hint="   Confirm"
+                android:inputType="textPassword"
+                android:textColor="#000" />
+        </TableRow>
+
+    </TableLayout>
+    <Button
+        android:id="@+id/btnRegister"
+        android:layout_width="250dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_login"
+        android:text="Register"
+        app:layout_constraintTop_toBottomOf="@+id/table"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0.1"/>
+    <TextView
+        android:id="@+id/LoginR"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Already have an account?"
+        android:textColor="#342dbe"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginBottom="10dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

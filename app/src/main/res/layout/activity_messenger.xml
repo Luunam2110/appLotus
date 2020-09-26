@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MessengerActivity">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/backgroud">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp">
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/profile_picture"
+                    android:layout_width="40dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/defaul_avt"
+                    android:layout_height="40dp" />
+
+                <TextView
+                    android:id="@+id/user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:layout_toRightOf="@+id/profile_picture"
+                    android:paddingLeft="10dp"
+                    android:text="User name"
+                    android:textSize="20sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="online"
+                    android:id="@+id/textonline"
+                    android:layout_toRightOf="@+id/profile_picture"
+                    android:layout_below="@+id/user_name"
+                    android:paddingLeft="20dp"/>
+                <TextView
+                    android:layout_width="12dp"
+                    android:layout_height="12dp"
+                    android:background="@drawable/icon_online"
+                    android:layout_alignRight="@+id/profile_picture"
+                    android:id="@+id/online"
+                    android:layout_alignBottom="@+id/profile_picture"/>
+            </RelativeLayout>
+        </androidx.appcompat.widget.Toolbar>
+            
+    </com.google.android.material.appbar.AppBarLayout>
+    <androidx.recyclerview.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/Recyclerview_chat"
+        android:layout_below="@+id/appbar"
+        android:layout_above="@+id/Bottom"/>
+    <RelativeLayout
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginBottom="5dp"
+        android:id="@+id/Bottom">
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:paddingLeft="20dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:layout_alignParentBottom="true"
+            android:hint="Type a message..."
+            android:background="@drawable/messenger"
+            android:textColor="#000"
+            android:layout_toLeftOf="@+id/Btn_send"
+            android:id="@+id/EtSend"/>
+
+        <ImageButton
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:id="@+id/Btn_send"
+            android:background="@drawable/ic_action_name"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"/>
+    </RelativeLayout>
+</RelativeLayout>

@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "500433979085",
+    "firebase_url": "https://lotus-2b405.firebaseio.com",
+    "project_id": "lotus-2b405",
+    "storage_bucket": "lotus-2b405.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:500433979085:android:88beda2645ac58275d4b84",
+        "android_client_info": {
+          "package_name": "com.example.lotus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "500433979085-fs8lfenasv4rrjdi5njbld2k3hhn813q.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.lotus",
+            "certificate_hash": "5a620b3e7575e6ba36cc578aeedc3e9ad99c2545"
+          }
+        },
+        {
+          "client_id": "500433979085-3ghu1qkdt2com60999036dopln9pkkan.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBm-dd_4KLuMCm2w7mwHFHeyCyFZ3XRY8Q"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "500433979085-3ghu1qkdt2com60999036dopln9pkkan.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

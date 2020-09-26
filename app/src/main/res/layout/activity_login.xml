@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="#ffc7c7"
+    android:layout_height="match_parent"
+    tools:context=".LoginActivity">
+    <ImageView
+        android:id="@+id/logo"
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@drawable/logo_lutos"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0.1"
+        />
+
+    <TableLayout
+        android:id="@+id/table"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0.4"
+        android:stretchColumns="1"
+        android:paddingLeft="30dp"
+        android:paddingRight="30dp">
+
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="15dp">
+
+            <TextView
+                android:id="@+id/tvemail"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Email:" />
+
+            <EditText
+                android:id="@+id/Etemail"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:hint="   Input Email"
+                android:textSize="15sp"
+                android:background="@drawable/dg_edit"
+                android:inputType="textEmailAddress"
+                android:textColor="#000" />
+        </TableRow>
+
+        <TableRow
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" >
+            <TextView
+                android:id="@+id/tvpass"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Password:"
+                android:layout_marginRight="10dp"/>
+
+            <EditText
+                android:id="@+id/Etpass"
+                android:layout_width="match_parent"
+                android:layout_height="30dp"
+                android:background="@drawable/dg_edit"
+
+                android:hint="   Input password"
+                android:textSize="15sp"
+                android:inputType="textPassword"
+                android:textColor="#000" />
+        </TableRow>
+
+    </TableLayout>
+    <TextView
+        android:id="@+id/Forget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Quên mật khẩu?"
+        android:textColor="#342dbe"
+        app:layout_constraintTop_toBottomOf="@+id/table"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0.1"
+        />
+    <Button
+        android:id="@+id/Login"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="@drawable/button_login"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/table"
+        app:layout_constraintVertical_bias="0.07"
+        app:layout_constraintHorizontal_bias="0.9"
+        android:text="Login"
+        />
+    <TextView
+        android:id="@+id/grid_horizon"
+        android:layout_width="wrap_content"
+        android:layout_height="2dp"
+        android:background="@drawable/grid_horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/Forget"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0.13"/>
+    <TextView
+        android:id="@+id/Register"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tạo tài khoản mới"
+        android:textColor="#342dbe"
+        app:layout_constraintTop_toBottomOf="@+id/grid_horizon"
+        android:textSize="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintVertical_bias="0.1"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

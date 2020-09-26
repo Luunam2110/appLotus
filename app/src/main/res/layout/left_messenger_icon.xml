@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="23:21 ngày 21 tháng 12 năm 2020"
+        android:visibility="gone"
+        android:layout_alignParentTop="true"
+        android:id="@+id/Tvtimesend"
+        android:gravity="center"/>
+    <RelativeLayout
+        android:layout_width="280dp"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@+id/Tvtimesend">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/picture_receiver"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignBottom="@+id/Tvmessage"
+            android:src="@drawable/defaul_avt" />
+
+        <TextView
+            android:id="@+id/Tvmessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="5dp"
+            android:layout_toRightOf="@+id/picture_receiver"
+            android:background="@drawable/left_messenger"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="5dp"
+            android:text="sdf hafjahdf "
+            android:textColor="#000" />
+
+    </RelativeLayout>
+
+</RelativeLayout>

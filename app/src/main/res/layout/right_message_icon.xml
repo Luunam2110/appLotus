@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingRight="10dp"
+    android:paddingTop="10dp">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="23:21 ngày 21 tháng 12 năm 2020"
+        android:visibility="gone"
+        android:layout_alignParentTop="true"
+        android:id="@+id/Tvtimesend"
+        android:gravity="center"/>
+    <RelativeLayout
+        android:layout_width="310dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/Tvtimesend">
+
+        <de.hdodenhof.circleimageview.CircleImageView
+            android:id="@+id/picture_receiver"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignBottom="@+id/Tvmessage"
+            android:src="@drawable/defaul_avt"
+            android:visibility="gone"/>
+        <TextView
+            android:id="@+id/Tvmessage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="5dp"
+            android:layout_alignParentRight="true"
+            android:background="@drawable/right_message"
+            android:gravity="center_vertical"
+            android:paddingLeft="10dp"
+            android:paddingTop="5dp"
+            android:paddingRight="10dp"
+            android:paddingBottom="5dp"
+            android:text="sdf hafjahdf sfsdf ef dfs sdf s sf  sf"
+            android:textColor="#000" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/Tvmessage"
+            android:text="da xem"
+            android:visibility="gone"
+            android:layout_alignRight="@+id/Tvmessage"
+            android:id="@+id/Tvseen"/>
+    </RelativeLayout>
+
+
+</RelativeLayout>
