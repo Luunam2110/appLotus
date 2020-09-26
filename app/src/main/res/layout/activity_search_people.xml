@@ -71,10 +71,16 @@
         android:layout_height="wrap_content"
         app:layout_constraintTop_toBottomOf="@+id/khungtim"
         android:gravity="center_horizontal"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Mọi người"
+        android:id="@+id/btnmoinguoi"
+        app:layout_constraintTop_toBottomOf="@+id/khungtim"/>
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/RvSearch"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_constraintTop_toBottomOf="@+id/khungtim"
+        app:layout_constraintTop_toBottomOf="@+id/btnmoinguoi"
         app:layout_constraintBottom_toBottomOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

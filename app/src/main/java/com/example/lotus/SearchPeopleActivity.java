@@ -27,7 +27,7 @@ public class SearchPeopleActivity extends AppCompatActivity {
     Toolbar toolbar;
     TextView noti;
     RecyclerView RvSearch;
-    Button btnsearch;
+    Button btnsearch,btnmoinguoi;
     EditText Etphone;
     List<User> result;
     DatabaseReference mReference;
@@ -52,12 +52,19 @@ public class SearchPeopleActivity extends AppCompatActivity {
         btnsearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                getuser(Etphone.getText().toString());
+                getuser(Etphone.getText().toString(),false);
+            }
+        });
+        btnmoinguoi.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getuser("",true);
             }
         });
     }
 
     private void mapview() {
+        btnmoinguoi= findViewById(R.id.btnmoinguoi);
         btnsearch =findViewById(R.id.BtnSearch);
         Etphone =findViewById(R.id.EtPhone);
         RvSearch = findViewById(R.id.RvSearch);
@@ -65,7 +72,7 @@ public class SearchPeopleActivity extends AppCompatActivity {
         mReference= FirebaseDatabase.getInstance().getReference().child("User");
         noti= findViewById(R.id.Tvnoti);
     }
-    private void getuser(final String phone){
+    private void getuser(final String phone, final Boolean moinguoi){
         mReference.addValueEventListener(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -73,7 +80,7 @@ public class SearchPeopleActivity extends AppCompatActivity {
                 for (DataSnapshot snapshot1: snapshot.getChildren()){
                     int t=-1;
                     String id,name,picture;
-                    if (snapshot1.child("Profile").child("PhoneNumber").getValue().toString().equals(phone)){
+                    if (snapshot1.child("Profile").child("PhoneNumber").getValue().toString().equals(phone) || moinguoi ){
                         id = snapshot1.getKey().toString();
                         name = snapshot1.child("Profile").child("UserName").getValue().toString();
                         picture = snapshot1.child("Profile").child("Picture").getValue().toString();
@@ -93,7 +100,7 @@ public class SearchPeopleActivity extends AppCompatActivity {
                         }
                     }
                 }
-                if (result.size()==0)
+                if (result.size()==0 && !moinguoi)
                     noti.setText("Không có kết quả phù hợp");
                 else
                     noti.setText("");
