@@ -28,6 +28,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.squareup.picasso.Picasso;
 
 import java.text.ParseException;
@@ -120,6 +121,7 @@ public class MessengerActivity extends AppCompatActivity {
         });
         getMessenger(chatid,picture);
     }
+
     public  void mapview (){
         textonline =findViewById(R.id.textonline);
         online= findViewById(R.id.online);
@@ -179,8 +181,27 @@ public class MessengerActivity extends AppCompatActivity {
 
             }
         });
+        String MyID= mAuth.getCurrentUser().getUid();
+        final DatabaseReference getIdUser = reference.child("Chat").child(receiver).child("Member");
+        getIdUser.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                for (DataSnapshot snapshot1: snapshot.getChildren()){
+                    String IdUser = snapshot1.getValue().toString();
+                    if (!IdUser.equals(MyID)){
+                        String FriendID= IdUser;
+                        DatabaseReference Notification  = reference.child("User").child(FriendID).child("Notification").push();
+                        Notification.setValue(hashMap);
+                    }
+                }
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
         DatabaseReference lastchat  = reference.child("Chat").child(receiver).child("Lassmess");
+
         lastchat.setValue(hashMap);
         getchat.push().setValue(hashMap).addOnCompleteListener(new OnCompleteListener<Void>() {
             @Override
@@ -193,6 +214,7 @@ public class MessengerActivity extends AppCompatActivity {
     private void getMessenger (String chat, final String picture){
         final DatabaseReference getmess = reference.child("Chat").child(chat).child("Messenger");
         getmess.addValueEventListener(new ValueEventListener() {
+            @RequiresApi(api = Build.VERSION_CODES.O)
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 Listmess.clear();

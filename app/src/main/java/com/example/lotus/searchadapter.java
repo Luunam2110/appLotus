@@ -41,6 +41,9 @@ public class searchadapter extends RecyclerView.Adapter<searchadapter.ViewHolder
         else {
             Picasso.get().load(user.getPicture()).into(holder.profile_image);
         }
+        if (!user.getStatus().equals("Online")){
+            holder.icon_online.setVisibility(TextView.INVISIBLE);
+        }
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -68,10 +71,12 @@ public class searchadapter extends RecyclerView.Adapter<searchadapter.ViewHolder
     public static class ViewHolder extends RecyclerView.ViewHolder{
         public TextView username;
         public ImageView profile_image;
+        public TextView icon_online;
 
         public ViewHolder(@NonNull View itemView) {
             super(itemView);
             username =itemView.findViewById(R.id.user_name);
+            icon_online = itemView.findViewById(R.id.online);
             profile_image=itemView.findViewById(R.id.Profile_image);
         }
     }

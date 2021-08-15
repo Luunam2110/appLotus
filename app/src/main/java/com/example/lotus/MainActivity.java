@@ -5,6 +5,9 @@ import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.viewpager.widget.ViewPager;
 import androidx.viewpager2.widget.ViewPager2;
+
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -29,6 +32,7 @@ import java.time.LocalDateTime;
 import de.hdodenhof.circleimageview.CircleImageView;
 
 public class MainActivity extends AppCompatActivity {
+    public static final String CHANNEL_ID = "Channel_Message" ;
     CircleImageView picture_profile;
     ViewPager viewPager;
     TabLayout tabLayout;
@@ -41,10 +45,14 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         mapview();
+        createNotificationChannel();
         myid= mAuth.getCurrentUser().getUid();
         viewPager.setAdapter(new pageradapter(getSupportFragmentManager()));
         tabLayout.setupWithViewPager(viewPager);
         tabLayout.getTabAt(0).setIcon(R.drawable.ic_baseline_chat_24);
+        tabLayout.getTabAt(0).setText("Trò chuyện");
+        tabLayout.getTabAt(1).setText("Danh bạ");
+        tabLayout.getTabAt(2).setText("Kết bạn");
         tabLayout.getTabAt(1).setIcon(R.drawable.ic_baseline_contacts_24);
         tabLayout.getTabAt(2).setIcon(R.drawable.ic_baseline_person_add_24);
         final DatabaseReference getpicture = mReference.child("User").child(mAuth.getCurrentUser().getUid()).child("Profile");
@@ -75,6 +83,21 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+    private void createNotificationChannel() {
+        // Create the NotificationChannel, but only on API 26+ because
+        // the NotificationChannel class is new and not in the support library
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = getString(R.string.channel_name);
+            String description = getString(R.string.channel_description);
+            int importance = NotificationManager.IMPORTANCE_DEFAULT;
+            NotificationChannel channel = new NotificationChannel(CHANNEL_ID, name, importance);
+            channel.setDescription(description);
+            // Register the channel with the system; you can't change the importance
+            // or other notification behaviors after this
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
     }
     void mapview (){
         toolbar =(Toolbar) findViewById(R.id.toolbar);

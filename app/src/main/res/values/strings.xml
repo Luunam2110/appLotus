@@ -2,4 +2,6 @@
     <string name="app_name">Lotus</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="channel_name">Channel message</string>
+    <string name="channel_description">This is Channel to get message from firebase</string>
 </resources>

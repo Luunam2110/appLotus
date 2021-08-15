@@ -79,10 +79,11 @@ public class SearchPeopleActivity extends AppCompatActivity {
                 result.clear();
                 for (DataSnapshot snapshot1: snapshot.getChildren()){
                     int t=-1;
-                    String id,name,picture;
+                    String id,name,picture,status;
                     if (snapshot1.child("Profile").child("PhoneNumber").getValue().toString().equals(phone) || moinguoi ){
                         id = snapshot1.getKey().toString();
                         name = snapshot1.child("Profile").child("UserName").getValue().toString();
+                        status = snapshot1.child("Profile").child("Status").getValue().toString();
                         picture = snapshot1.child("Profile").child("Picture").getValue().toString();
                         for (int i=0;i<result.size();i++){
                             if (result.get(i).id.equals(id)) {t=i;break;}
@@ -90,6 +91,7 @@ public class SearchPeopleActivity extends AppCompatActivity {
                         if (t==-1) {
                             User user = new User();
                             user.setId(id);
+                            user.setStatus(status);
                             user.setPicture(picture);
                             user.setUsername(name);
                             result.add(user);
@@ -97,6 +99,7 @@ public class SearchPeopleActivity extends AppCompatActivity {
                         else {
                             result.get(t).setUsername(name);
                             result.get(t).setPicture(picture);
+                            result.get(t).setStatus(status);
                         }
                     }
                 }

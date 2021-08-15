@@ -24,6 +24,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.squareup.picasso.Picasso;
 
 import java.text.SimpleDateFormat;
@@ -39,7 +40,6 @@ public class ProfileActivity extends AppCompatActivity  implements View.OnClickL
     String id;
     CircleImageView Profile_image;
     DatabaseReference mreference;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
